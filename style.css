@@ -1,13 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:200,300,400,500,600,700,800,900&display=swap');
 
 :root {
   --green: #34d285;
+  --purple: #3f3d56;
+  --purple-light: #6e6a98;
 }
 
 body{
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+.nav-top{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.full-screen-section{
+  background: url("assets/img/background.png") center/cover;
+}
+
 .nav-top ul {
     list-style-type: none;
     margin: 0;
@@ -25,9 +40,11 @@ body{
   display: block;
   color: #3a5b77;
   text-align: center;
-  padding: 14px 16px;
+  padding: 25px 30px;
   font-weight: 600;
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 5px
 }
 
 .nav-top li a:hover:not(.active) {
@@ -35,8 +52,9 @@ body{
 }
 
 .nav-top .active {
-  background-color: var(--green);
-  color: #FFFFFF;
+    background-color: var(--green);
+    color: #FFFFFF;
+    box-shadow: 0px 0px 40px 0px #34d28578;
 }
 
 .full-screen-section{
@@ -58,12 +76,68 @@ body{
   width: 720px;
 }
 
-.second-text-left-home{
-  width: 35%;
-  font-size: 12pt;
-  text-align: justify;
+.text-left-home{
+    margin-left: 40px;
+    margin-top: -50px;
 }
 
-.title-left-home{
-  font-size: 30pt;
+.second-text{
+  width: 25%;
+  margin: 20px;
+  font-size: 16pt;
+  text-align: justify;
+  color: var(--purple-light)
+}
+
+.title-bigger{
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 40pt;
+  margin: 20px 20px;
+  color: var(--purple);
+  font-weight: 800;
+}
+
+.buttons-shell{
+  display: flex;
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: #FFFFFF;
+  padding: 10px 25px;
+  border-radius: 7px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12pt;
+  outline: none;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.green{
+    background: #34d285;
+    box-shadow: 0px 5px 35px -3px #34d28599;
+}
+
+.red{
+    background: #d03131;
+    box-shadow: 0px 5px 35px -5px #d0313178;
+}
+
+.blue{
+    background: #3187d0;
+    box-shadow: 0px 5px 35px -5px #3187d078;
+}
+
+.yellow{
+    background: #d0a631;
+    box-shadow: 0px 5px 35px -5px #d0a63178;
+}
+
+.purple{
+    background: var(--purple);
+    box-shadow: 0px 5px 35px -5px #3f3d5678;
 }
