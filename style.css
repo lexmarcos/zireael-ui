@@ -7,29 +7,49 @@
   --purple-light: #6e6a98;
 }
 
-body{
+body {
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.nav-top{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 1;
+.nav-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
-.full-screen-section{
+.responsive-nav-bar-shell {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ffffffc2;
+  box-shadow: 0px 0px 20px #35597f59;
+  height: 50px;
+  font-size: 16pt;
+  color: #3f3d56;
+  position: relative;
+}
+
+.menu-responsive{
+  position: absolute;
+  left: 5%;
+}
+
+.full-screen-section {
   background: url("assets/img/background.png") center/cover;
 }
 
 .nav-top ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #fff;
-    box-shadow: 0px 0px 20px #35597f59;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ffffffc2;
+  box-shadow: 0px 0px 20px #35597f59;
 }
 
 .nav-top li {
@@ -52,12 +72,12 @@ body{
 }
 
 .nav-top .active {
-    background-color: var(--green);
-    color: #FFFFFF;
-    box-shadow: 0px 0px 40px 0px #34d28578;
+  background-color: var(--green);
+  color: #FFFFFF;
+  box-shadow: 0px 0px 40px 0px #34d28578;
 }
 
-.full-screen-section{
+.full-screen-section {
   height: 100vh;
   width: 100%;
   position: relative;
@@ -66,22 +86,22 @@ body{
   justify-content: center;
 }
 
-.illustration-right-home{
+.illustration-right-home {
   float: right;
   position: absolute;
   right: 20px;
 }
 
-.illustration{
+.illustration {
   width: 720px;
 }
 
-.text-left-home{
-    margin-left: 40px;
-    margin-top: -50px;
+.text-left-home {
+  margin-left: 40px;
+  margin-top: -50px;
 }
 
-.second-text{
+.second-text {
   width: 25%;
   margin: 20px;
   font-size: 16pt;
@@ -89,7 +109,7 @@ body{
   color: var(--purple-light)
 }
 
-.title-bigger{
+.title-bigger {
   font-family: 'Montserrat Alternates', sans-serif;
   font-size: 40pt;
   margin: 20px 20px;
@@ -97,11 +117,11 @@ body{
   font-weight: 800;
 }
 
-.buttons-shell{
+.buttons-shell {
   display: flex;
 }
 
-.btn{
+.btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,29 +135,98 @@ body{
   outline: none;
   margin: 10px;
   cursor: pointer;
+  transition: all .5s;
+  -webkit-font-smoothing: subpixel-antialiased;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
 }
 
-.green{
-    background: #34d285;
-    box-shadow: 0px 5px 35px -3px #34d28599;
+.btn:hover {
+  transform: scale(1.1) translateZ(0);
 }
 
-.red{
-    background: #d03131;
-    box-shadow: 0px 5px 35px -5px #d0313178;
+.green {
+  background: #34d285;
+  box-shadow: 0px 5px 35px -3px #34d28599;
 }
 
-.blue{
-    background: #3187d0;
-    box-shadow: 0px 5px 35px -5px #3187d078;
+.red {
+  background: #d03131;
+  box-shadow: 0px 5px 35px -5px #d0313178;
 }
 
-.yellow{
-    background: #d0a631;
-    box-shadow: 0px 5px 35px -5px #d0a63178;
+.blue {
+  background: #3187d0;
+  box-shadow: 0px 5px 35px -5px #3187d078;
 }
 
-.purple{
-    background: var(--purple);
-    box-shadow: 0px 5px 35px -5px #3f3d5678;
+.yellow {
+  background: #d0a631;
+  box-shadow: 0px 5px 35px -5px #d0a63178;
 }
+
+.purple {
+  background: var(--purple);
+  box-shadow: 0px 5px 35px -5px #3f3d5678;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 1300px) {
+  .illustration {
+    width: calc(65% - 60px);
+    float: right;
+  }
+
+  .title-bigger {
+    font-size: calc(4vw - 12px);
+  }
+
+  .second-text {
+    width: calc(40% - 90px)
+  }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .responsive-nav-bar-shell {
+    display: flex;
+  }
+
+  .nav-top ul {
+    display: none
+  }
+  .title-bigger {
+    font-size: calc(10vw - 12px);
+  }
+  .full-screen-section{
+      flex-direction: column-reverse;
+      margin-top: 80px;
+  }
+  .illustration-right-home {
+    float: none;
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .illustration{
+    float: none;
+    width: calc(96% - 60px);
+    margin-right: -55px;
+  }
+  .second-text {
+    width: 82%;
+  }
+  .buttons-shell {
+    flex-flow: column;
+  }
+  .text-left-home {
+    margin-left: 0px;
+    margin-top: -50px;
+  }
+}
+
